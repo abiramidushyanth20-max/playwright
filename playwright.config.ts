@@ -23,10 +23,11 @@ export default defineConfig({
   workers: 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [['html', { open: 'always' }]],
+  timeout:60000*2,
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
-    headless:false,
-    channel:'edge',
+    headless:true,
+    channel:'msedge',
     /* Base URL to use in actions like `await page.goto('')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -37,8 +38,8 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'edge',
+      use: { ...devices['Desktop Edge'] },
     },
 
     // {
